@@ -9,9 +9,7 @@
 <div class="todo-item mb-3" *ngFor="let todo of todosFiltered()"> <!--Implemento filtros para que muestre solo esos-->
     <ul class="list-group">
             <div class="row" *ngIf="todo.editing == false; else editingTodo" [ngClass]="{ 'completed' : todo.completed}">
-                <label class="col" >
-                    <input type="checkbox" [(ngModel)]="todo.completed">
-                </label>
+                <input class="col" type="checkbox" [(ngModel)]="todo.completed">
                 <li (ngModelChange)="todo.id" class="col-7">{{todo.id}}.{{todo.title}}</li>
                 <button class="btn btn-outline-primary col mr-2" (click)="editTodo(todo)">Editar</button>
                 <button class="btn btn-outline-danger  col mr-2" (click)="deleteTodo(todo.id,todo)" >Eliminar</button>
