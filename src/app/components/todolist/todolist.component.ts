@@ -50,7 +50,6 @@ export class TodolistComponent implements OnInit {
   deleteTodo(id:number,todo:TodoInterface):void
   {
     this.todos=this.todos.filter(todo => todo.id !== id)
-    alert(this.todos.length)
     this.idForTodo=this.todos.length;
     this.refresh()
     
